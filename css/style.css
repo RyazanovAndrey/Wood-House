@@ -27,6 +27,23 @@ body {
 
 
 .container {
+
+    @media (width < 1200px) {
+        max-width: var(--widthLaptop)
+    }
+
+    @media (width < 992px) {
+        max-width: var(--widthTablet)
+    }
+
+    @media (width < 768px) {
+        max-width: var(--widthMobile)
+    }
+
+    @media (width < 576px) {
+        max-width: var(--widthSmallMob)
+    }
+
     max-width: var(--widthDesk) ;
     padding-inline: 15px;
     margin: 0 auto;
@@ -68,6 +85,38 @@ body {
     display: none;
 }
 
+.burger {
+
+    @media (width < 1200px) {
+        display: block;
+    }
+
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: none;
+    transition: .3s;
+    transform: rotate(0);
+}
+
+.burger span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--colorMain);
+    top: calc(50% - 2px);
+}
+
+.burger span:first-child {
+    transform: rotate(90deg);
+}
+
+.burger.active {
+    transform: rotate(45deg);
+}
+
+
 /* Home */
 
 .home {
@@ -79,6 +128,7 @@ body {
 .header {
     padding-top: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -158,6 +208,15 @@ body {
 /* Dignity */
 
 .dignity-wrapper {
+
+    @media(width < 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(width < 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -181,10 +240,21 @@ body {
 /* Whyus */
 
 .whyus {
+
     padding: var(--paddingBl);
 }
 
 .whyus-wrapper {
+
+    @media(width < 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(width < 576px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -199,6 +269,10 @@ body {
     overflow: hidden;
     transition: .3s;
     cursor: pointer;
+}
+
+.card img {
+    width: 460px;
 }
 
 .card:hover {
@@ -219,6 +293,15 @@ body {
 }
 
 .work-wrapper {
+
+    @media(width < 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(width < 576px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -230,6 +313,10 @@ body {
     border-radius: var(--borderRadius);
     overflow: hidden;
     cursor: pointer;
+}
+
+.work-card img {
+    width: 500px;
 }
 
 .work-card::before {
@@ -287,6 +374,11 @@ body {
 }
 
 .steps-wrapper {
+
+    @media(width < 992px) {
+        grid-template-columns: 1fr;
+    }
+
     margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -454,8 +546,18 @@ body {
     margin-bottom: 60px;
 }
 
-
 .calc-wrapper {
+
+    @media(width < 992px) {
+        grid-template-areas: 
+            'item1 item1'
+            'item3 item4'
+            'item5 item6'
+            'item7 item7'
+            'item2 item2'
+    ;
+    }
+
     display: grid;
     grid-template-areas: 
     'item1 item1 item2 item2'
@@ -702,6 +804,11 @@ body {
 }
 
 .ques-wrapper {
+
+    @media(width < 992px) {
+        grid-template-columns: 1fr;
+    }
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 100px;

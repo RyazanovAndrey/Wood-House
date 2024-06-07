@@ -128,8 +128,29 @@ const swiper = new Swiper('.slider .swiper', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    }
-  
+    },
+    breakpoints: {
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        320: {
+            slidesPerView: 1.5,
+            spaceBetween: 30
+        },
+        250: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        },
+      }
   });
 
   // Btn-up
