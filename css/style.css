@@ -414,16 +414,20 @@ body {
     font-size: 80px;
     color: var(--colorSecondary);
     transition: .3s;
+    margin: 0 auto;
 }
 
 .col-left {
     @media(width < 576px) {
         display: flex;
-        align-content: center;
     }
 }
 
 .col-right {
+    @media(width < 576px) {
+        text-align: center;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -516,6 +520,11 @@ body {
 }
 
 .arrows {
+
+    @media(width < 576px) {
+        display: none;
+    }
+
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -735,7 +744,7 @@ body {
 
     span {
         position: relative;
-        width: 20px;
+        min-width: 20px;
         height: 20px;
         border: 2px solid var(--colorMain);
         border-radius: 100%;
