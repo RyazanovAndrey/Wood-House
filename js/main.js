@@ -1,6 +1,9 @@
 let line = document.querySelector('.line')
 let btnUp = document.querySelector('.btn-up')
 
+let burger = document.querySelector('.burger')
+let menu = document.querySelector('.menu')
+
 let popUpWin = document.querySelector('.popup')
 let btnHome = document.querySelector('.btn-home')
 let paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'
@@ -115,6 +118,21 @@ inputData.forEach(item => {
 
         let formatter = Intl.NumberFormat('ru')
         priceCount.innerHTML = formatter.format(sum.toFixed(0))
+    })
+})
+
+// Burger
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('open')
+    menu.classList.toggle('open')
+})
+
+let links = document.querySelectorAll('.link')
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        burger.classList.toggle('open')
+        menu.classList.toggle('open')
     })
 })
 
