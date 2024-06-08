@@ -386,6 +386,11 @@ body {
 }
 
 .steps-card {
+
+    @media(width < 576px) {
+        flex-direction: column;
+    }
+
     display: flex;
     gap: 20px;
     cursor: pointer;
@@ -409,6 +414,13 @@ body {
     font-size: 80px;
     color: var(--colorSecondary);
     transition: .3s;
+}
+
+.col-left {
+    @media(width < 576px) {
+        display: flex;
+        align-content: center;
+    }
 }
 
 .col-right {
